@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+{% block body %}
+	<body id="js_body" class="bg-black p-10">
+		<div class="container mx-auto p-10 bg-white">
+			{% block header %}
+				<header class="flex gap-2">
+					<h1>{{title|title}}</h1>
+					<div>Nu:
+						{{time}}</div>
+				</header>
+			{% endblock %}
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+{% endblock %}

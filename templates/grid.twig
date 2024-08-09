@@ -1,0 +1,11 @@
+{% extends "content.twig" %}
+{% block content %}
+<div class="flex gap-2 font-mono flex-wrap">
+	{% for s in sessions|slice(0, 20) %}
+	<article class="js_session_{{s.id}} border-2 border-black border-b-4 border-r-4 p-5 {%if s.sessionvars.distance <=0 %}bg-fri3d_B{% elseif s.sessionvars.distance <= 15 %}bg-fri3d_C{% endif %}">
+		<h1 class="font-bold">{{s.sessionvars.title}}</h1>
+		<p>@ {{s.sessionvars.room}} - {{s.sessionvars.start}} > {{s.sessionvars.end}}</p>
+	</article>
+	{% endfor %}
+</div>
+{% endblock %}

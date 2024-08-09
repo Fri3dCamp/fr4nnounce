@@ -1,0 +1,27 @@
+{% extends "content.twig" %}
+{% block content %}
+	<table>
+		<thead>
+			<tr class="text-left">
+				<th>Naam</th>
+				<th>Locatie</th>
+				<th>Start</th>
+				<th>Duur</th>
+				<th>Einde</th>
+				<th>Omschrijving</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for s in sessions|slice(0, 10) %}
+				<tr class="js_session_{{s.id}} text-left {%if s.sessionvars.inprogress %}bg-fri3d_B{% endif %}">
+					<td>{{s.sessionvars.title}}</td>
+					<td>{{s.sessionvars.room}}</td>
+					<td>{{s.sessionvars.start}}</td>
+					<td>{{s.sessionvars.duration}}</td>
+					<td>{{s.sessionvars.end}}</td>
+					<td>{{s.sessionvars.abstract}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
